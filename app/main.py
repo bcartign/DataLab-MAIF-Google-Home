@@ -22,7 +22,7 @@ listNoms = []
 
 @app.route("/")
 def hello():
-    return "Le serveur DataLab MAIF Assistant est à l'écoute..."
+    return "Le serveur DataLab MAIF (Heroku) est à l'écoute..."
 
 
 @app.route('/dialog', methods=['POST'])

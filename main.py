@@ -31,9 +31,9 @@ def dialog():
     req = request.get_json(silent=True, force=True)
     if DEBUG:
         print('=========== main ===========')
-    texte = req['queryResult']
-    action = req['queryResult']['action']
-    sessionID = req['session']
+    texte = req["queryResult"]
+    action = req["queryResult"]["action"]
+    sessionID = req["session"]
     message = {}
     if DEBUG:
         print('DEBUG : texte=', texte, ' action=', action)

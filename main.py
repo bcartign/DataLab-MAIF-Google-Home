@@ -20,7 +20,7 @@ listUsers = []
 listNoms = []
 
 
-@app.route("/")
+@app.route('/')
 def hello():
     return "Le serveur DataLab MAIF (Heroku) est à l'écoute..."
 
@@ -36,17 +36,16 @@ def dialog():
     sessionID = req['session']
     message = {}
     if DEBUG:
-        # print("DEBUG : session=", sessionID,
-        print("DEBUG : texte=", texte, " action=", action)
-
-    if action:
-        res = getattr(ActionV2, action)(
-            request=req, listUser=listUsers, listNom=listNoms, session=sessionID)
-        message = getattr(MessageV2, "{0}_message".format(action))(
-            reponse=res, request=req, session=sessionID)
+        print('DEBUG : texte=', texte, ' action=', action)
+    if sessionID:
+        if action:
+            res = getattr(ActionV2, action)(
+                request=req, listUser=listUsers, listNom=listNoms, session=sessionID)
+            message = getattr(MessageV2, "{0}_message".format(action))(
+                reponse=res, request=req, session=sessionID)
 
     if DEBUG:
-        print("DEBUG : message=", json.dumps(message))
+        print('DEBUG : message=', json.dumps(message))
     r = make_response(json.dumps(message))
     r.headers['Content-Type'] = 'application/json; charset=utf-8'
     if DEBUG:
@@ -77,24 +76,24 @@ def loadUser(listUsers, listNoms):
         datas = csv.reader(csvfile, delimiter=';')
         for row in datas:
             # if(len(row[2]) > 5):
-            #    row[2] = "0" + row[2]
+            #    row[2] = '0' + row[2]
             listUsers.append(User(row[0], row[1], row[2], row[3]))
             listNoms.append(row[0])
 
 
 if __name__ == 'main':
 
-    print("Chargement des utilisateurs ...")
+    print('Chargement des utilisateurs ...')
     loadUser(listUsers, listNoms)
-    print("Chargement des utilisateurs nb:{0} - OK".format(len(listUsers)))
+    print('Chargement des utilisateurs nb:{0} - OK'.format(len(listUsers)))
 
 
 if __name__ == '__main__':
 
     if DEBUG:
-        print("DEBUG : Chargement des utilisateurs ...")
+        print('DEBUG : Chargement des utilisateurs ...')
     loadUser(listUsers, listNoms)
-    print("Chargement des utilisateurs nb:{0} - OK".format(len(listUsers)))
+    print('Chargement des utilisateurs nb:{0} - OK'.format(len(listUsers)))
 
-    print("Démarrage du serveur ")
-    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 8080)), debug=True)
+    print('Démarrage du serveur ')
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=True)

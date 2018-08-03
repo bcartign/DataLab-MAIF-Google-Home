@@ -12,7 +12,7 @@ from Message import Message, MessageV2
 
 from flask import Flask, request, make_response
 
-DEBUG = True
+
 FICHIER_UTILISATEUR = 'annuaire.csv'
 
 app = Flask(__name__)
@@ -28,6 +28,7 @@ def hello():
 @app.route('/dialog', methods=['POST'])
 def dialog():
 
+    DEBUG = True
     req = request.get_json(silent=True, force=True)
     if DEBUG:
         print('=========== main ===========')
@@ -83,17 +84,14 @@ def loadUser(listUsers, listNoms):
 
 if __name__ == 'main':
 
-    print('Chargement des utilisateurs ...')
     loadUser(listUsers, listNoms)
     print('Chargement des utilisateurs nb:{0} - OK'.format(len(listUsers)))
 
 
 if __name__ == '__main__':
 
-    if DEBUG:
-        print('DEBUG : Chargement des utilisateurs ...')
     loadUser(listUsers, listNoms)
     print('Chargement des utilisateurs nb:{0} - OK'.format(len(listUsers)))
 
-    print('Démarrage du serveur ')
+    print('Démarrage du serveur DataLab MAIF')
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)), debug=True)

@@ -37,7 +37,7 @@ class MessageV2():
             "source": "webhook",
             "followupEventInput": {
                 "name": "AnnuaireFin",
-                "languageCode": "fr-FR"
+                "languageCode": "fr-fr"
             }
         }
 
@@ -62,7 +62,7 @@ class MessageV2():
             return {
                 "followupEventInput": {
                     "name": "E_INFORMATION_QUESTION_{0}".format(int(lstQuestion[-1])),
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
 
@@ -80,7 +80,7 @@ class MessageV2():
                 ],
                 "followupEventInput": {
                     "name": "E_QUIZ_TERMINE",
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
 
@@ -106,7 +106,7 @@ class MessageV2():
             ],
             "followupEventInput": {
                 "name": "E_QUESTION{0}".format(reponse['nouvelleQuestion']),
-                "languageCode": "fr-FR"
+                "languageCode": "fr-fr"
             }
         }
 
@@ -151,7 +151,7 @@ class MessageV2():
                 ],
                 "followupEventInput": {
                     "name": "E_QUIZ_TERMINE",
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
         else:
@@ -172,7 +172,7 @@ class MessageV2():
                 ],
                 "followupEventInput": {
                     "name": "E_QUESTION{0}".format(laQuestion),
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
 
@@ -190,7 +190,7 @@ class MessageV2():
                 "source": "webhook",
                 "followupEventInput": {
                     "name": "erreurFiltre",
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
 
@@ -218,7 +218,7 @@ class MessageV2():
                 ],
                 "followupEventInput": {
                     "name": "E_LDAP_CHOIX_PRENOM",
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
 
@@ -257,7 +257,7 @@ class MessageV2():
                 ],
                 "followupEventInput": {
                     "name": "transfert",
-                    "languageCode": "fr-FR"
+                    "languageCode": "fr-fr"
                 }
             }
 
@@ -311,7 +311,7 @@ class MessageV2():
             ],
             "followupEventInput": {
                 "name": event,
-                "languageCode": "fr-FR"
+                "languageCode": "fr-fr"
             }
         }
 

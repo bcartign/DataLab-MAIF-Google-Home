@@ -47,7 +47,7 @@ def dialog():
 
     if DEBUG:
         print('DEBUG : message=', json.dumps(message))
-    r = make_response(json.dumps(message, ensure_ascii=False).decode('utf8'))
+    r = make_response(json.dumps(message))
     r.headers['Content-Type'] = 'application/json; charset=utf-8'
     if DEBUG:
         print('=========== end main ===========')

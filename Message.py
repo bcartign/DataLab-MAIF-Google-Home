@@ -1,5 +1,5 @@
 # MAIF DataLab Bruno CARTIGNY
-# 02.08.18 - ajout API v2
+# 03.08.18 - ajout API v2
 
 
 # -*- coding: utf-8 -*-
@@ -36,7 +36,8 @@ class MessageV2():
             ],
             "source": "webhook",
             "followupEventInput": {
-                "name": "AnnuaireFin"
+                "name": "AnnuaireFin",
+                "languageCode": "fr-FR"
             }
         }
 
@@ -60,7 +61,8 @@ class MessageV2():
         if not reponse['repondu']:
             return {
                 "followupEventInput": {
-                    "name": "E_INFORMATION_QUESTION_{0}".format(int(lstQuestion[-1]))
+                    "name": "E_INFORMATION_QUESTION_{0}".format(int(lstQuestion[-1])),
+                    "languageCode": "fr-FR"
                 }
             }
 
@@ -77,7 +79,8 @@ class MessageV2():
                     }
                 ],
                 "followupEventInput": {
-                    "name": "E_QUIZ_TERMINE"
+                    "name": "E_QUIZ_TERMINE",
+                    "languageCode": "fr-FR"
                 }
             }
 
@@ -102,7 +105,8 @@ class MessageV2():
                 }
             ],
             "followupEventInput": {
-                "name": "E_QUESTION{0}".format(reponse['nouvelleQuestion'])
+                "name": "E_QUESTION{0}".format(reponse['nouvelleQuestion']),
+                "languageCode": "fr-FR"
             }
         }
 
@@ -146,7 +150,8 @@ class MessageV2():
                     }
                 ],
                 "followupEventInput": {
-                    "name": "E_QUIZ_TERMINE"
+                    "name": "E_QUIZ_TERMINE",
+                    "languageCode": "fr-FR"
                 }
             }
         else:
@@ -166,7 +171,8 @@ class MessageV2():
                     }
                 ],
                 "followupEventInput": {
-                    "name": "E_QUESTION{0}".format(laQuestion)
+                    "name": "E_QUESTION{0}".format(laQuestion),
+                    "languageCode": "fr-FR"
                 }
             }
 
@@ -183,7 +189,8 @@ class MessageV2():
             return {
                 "source": "webhook",
                 "followupEventInput": {
-                    "name": "erreurFiltre"
+                    "name": "erreurFiltre",
+                    "languageCode": "fr-FR"
                 }
             }
 
@@ -210,7 +217,8 @@ class MessageV2():
                     }
                 ],
                 "followupEventInput": {
-                    "name": "E_LDAP_CHOIX_PRENOM"
+                    "name": "E_LDAP_CHOIX_PRENOM",
+                    "languageCode": "fr-FR"
                 }
             }
 
@@ -248,7 +256,8 @@ class MessageV2():
                     }
                 ],
                 "followupEventInput": {
-                    "name": "transfert"
+                    "name": "transfert",
+                    "languageCode": "fr-FR"
                 }
             }
 
@@ -301,7 +310,8 @@ class MessageV2():
                 },
             ],
             "followupEventInput": {
-                "name": event
+                "name": event,
+                "languageCode": "fr-FR"
             }
         }
 
